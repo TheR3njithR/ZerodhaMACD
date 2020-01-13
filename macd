@@ -1,0 +1,18 @@
+from kiteconnect import KiteConnect
+from math import floor, ceil
+import datetime
+import pandas as pd
+import numpy as np
+import sys
+import os
+import time
+import matplotlib.pyplot as plt
+
+api_key = "dcdukpq02yifq7yt"
+api_secret = "0eu28qpdj8fx0y2w2d0knihg868pmt9k"
+access_token = "access_token"
+kite = KiteConnect(api_key=api_key)
+print("[*] Generate Access Token :", kite.login_url())
+request_token = input("[*] Enter Your Request Token here: ")
+data = kite.generate_session(request_token, api_secret=api_secret)
+kite.set_access_token(data["access_token"])
